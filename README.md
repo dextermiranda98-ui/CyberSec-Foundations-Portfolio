@@ -43,6 +43,7 @@ Incident Detection: Writing custom detection rules for specific attack technique
 Offensive Security: Phishing, payload delivery, privilege escalation, and lateral movement.
 
 💥 Cyber Attack Simulation (Red Team)
+
 A full, end-to-end attack was conducted against the ProjectX environment, leveraging misconfigurations and vulnerable user interaction to compromise the domain. The phases mapped directly to the MITRE ATT&CK framework:
 
 | **ATT&CK Phase** | **Technique (T-Code)** | **Summary of Action** | 
@@ -55,6 +56,7 @@ A full, end-to-end attack was conducted against the ProjectX environment, levera
 | Persistence | T1547 (Boot or Logon Autostart Execution) | Established a mechanism to maintain access in case of a system reboot or session termination. | 
 
 🔎 Incident Response and Detection (Blue Team)
+
 The primary goal of the Blue Team component was to ensure the security stack could detect every phase of the Red Team simulation.
 
 Wazuh Alert Triage: Monitored the Wazuh dashboard for high-severity alerts related to unauthorized process execution (PowerShell), new user creation, and suspicious remote logins.
@@ -66,6 +68,7 @@ Log Investigation: Used Security Onion (Elastic Stack, Wireshark, Suricata) to a
 Remediation: Documented the steps required to quarantine the infected hosts, revoke compromised credentials, and deploy GPOs to prevent the attack vector from being used again.
 
 📂 Repository Contents
+
 Documentation/ - Detailed write-ups on the attack methodology, incident response report, and network architecture guide.
 
 Configuration-Scripts/ - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
@@ -75,10 +78,11 @@ Attack-Artifacts/ - The non-malicious code/payloads (e.g., Python scripts, HTML 
 Evidence-Screenshots/ - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
 
 🚀 Future Enhancements (NA101 Integration)
+
 This project serves as the foundation for future work. The immediate next steps include building off this topology for the Networks & Attacks 101 (NA101) course:
 
 Integrating a dedicated firewall solution (e.g., pfSense) to implement network segmentation rules.
 
 Deploying an Intrusion Prevention System (IPS) like Suricata to actively block network attacks.
 
-Practicing advanced network-layer attacks (MiTM, DNS Spoofi
+Practicing advanced network-layer attacks (MiTM, DNS Spoofing).
