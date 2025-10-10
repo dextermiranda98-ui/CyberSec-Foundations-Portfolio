@@ -1,61 +1,167 @@
-🛡️ CyberSec Foundations Portfolio: My Transition into Digital Defense
-Context: From Warehouse Logistics to Cyber Security
-This repository is a live portfolio detailing my transition into the field of cybersecurity. After spending several years managing physical logistics in a warehouse environment, I realized my passion for problem-solving and systematic organization translated directly to digital security.
+🛡️ Project Overview
+This repository documents the Enterprise 101 (E101) core section from ProjectSecurity.io, where I designed, built, attacked, and defended a small, virtualized enterprise network known as "ProjectX."
 
-This portfolio begins with the foundational knowledge and practical labs completed after successfully finishing the ProjectSecurity.io Enterprises E101 Course. My goal is to demonstrate competency in fundamental security principles and show continuous growth as I move toward more complex roles like SOC Analyst or Penetration Tester.
+The primary goal of this project was to gain hands-on, end-to-end experience in both offensive (Red Team) and defensive (Blue Team) security within a realistic Active Directory environment.
 
-🎯 Repository Goal
-The primary purpose of this repository is to track and demonstrate practical application of entry-level security skills. It serves as a centralized place for:
+Key Outcomes:
 
-Documenting practical lab work and findings.
+Successfully deployed and managed a multi-OS virtual network using a defined enterprise topology.
 
-Storing basic scripting solutions for security automation.
+Implemented a Security Information and Event Management (SIEM) solution for continuous monitoring.
 
-Organizing structured review notes on core concepts.
+Executed a multi-stage cyber attack, from initial access to data exfiltration.
 
-📁 Project Structure
-This repository is organized into three primary areas reflecting core foundational skills:
+Developed custom detection rules and performed incident response to identify and contain the simulated threat.
 
-Directory
+🏛️ Lab Topology and Technologies
+The ProjectX network was segmented and managed using VirtualBox (or VMware) to simulate a modern corporate infrastructure.
 
-Content Focus
+Network Components
+Virtual Machine (VM)
 
-Example Files/Labs
+Role
 
-1-Networking-Demos
+Operating System/Tool
 
-Practical analysis of network traffic and protocol behavior.
+Purpose
 
-Wireshark .pcap files, documentation on TCP/IP handshake analysis, DNS query breakdown, and basic subnetting exercises.
+PROJECTX-AD
 
-2-Security-Scripting
+Domain Controller (DC)
 
-Small, utility scripts written primarily in Python for common security tasks.
+Windows Server 2025
 
-log_parser.py (Script to identify failed login attempts), password_checker.py (Basic script to evaluate password complexity).
+Centralized identity management (Active Directory) and DNS resolution.
 
-3-E101-Review-Notes
+PROJECTX-W11
 
-Structured Markdown notes summarizing critical security frameworks and terminology.
+Windows Workstation
 
-OSI-Model-Summary.md, CIA-Triad-Deep-Dive.md, and summaries of common attack vectors (e.g., Phishing, DDoS).
+Windows 11 Enterprise
 
-🛠️ Key Technologies & Concepts Demonstrated
-Networking: OSI Model, TCP/IP, Subnetting basics.
+Simulates a primary user endpoint. Used for phishing and vulnerability exploitation.
 
-Tools: Wireshark, Basic Command Line Interface (CLI) usage.
+PROJECTX-LINUX
 
-Scripting: Python (specifically file handling, regex, and basic logic).
+Corporate Workstation
 
-Concepts: Confidentiality, Integrity, Availability (CIA Triad), Access Control, Vulnerability vs. Threat.
+Ubuntu Desktop 22.04
 
-Version Control: Git & GitHub.
+Simulates a secondary user endpoint.
 
-🌱 Future Development
-As I continue my studies and gain certifications, I plan to expand this portfolio with:
+PROJECTX-SEC
 
-Incident Response Playbooks: Draft documentation for handling basic security incidents.
+Security Server (SIEM)
 
-Honeypot Analysis: Setting up and analyzing traffic captured by a simple digital honeypot.
+Ubuntu Server 22.04 + Wazuh
 
-Cloud Security Basics: Introducing infrastructure-as-code (IaC) templates for secure cloud deployments.
+Security Information and Event Management, collecting logs from all endpoints via agents.
+
+PROJECTX-NETMON
+
+Network Monitoring
+
+Security Onion
+
+Intrusion Detection System (IDS) and network log analysis.
+
+ATTACKER-VM
+
+Offensive Machine
+
+Kali Linux
+
+Used to execute the simulated cyber attack chain.
+
+Corporate Services
+
+Email/Web Sandbox
+
+MailHog
+
+Simulates an internal email server for intercepting phishing attempts.
+
+Core Skills Demonstrated
+System Administration: Active Directory setup, Group Policy Object (GPO) configuration, DNS management.
+
+Virtualization: Configuration of NAT and Internal/Host-Only networks for isolation and segmentation.
+
+Log Management: Deployment and configuration of Wazuh agents and centralized log ingestion.
+
+Incident Detection: Writing custom detection rules for specific attack techniques.
+
+Offensive Security: Phishing, payload delivery, privilege escalation, and lateral movement.
+
+💥 Cyber Attack Simulation (Red Team)
+A full, end-to-end attack was conducted against the ProjectX environment, leveraging misconfigurations and vulnerable user interaction to compromise the domain. The phases mapped directly to the MITRE ATT&CK framework:
+
+ATT&CK Phase
+
+Technique (T-Code)
+
+Summary of Action
+
+Initial Access
+
+T1566 (Phishing)
+
+Delivered a malicious file or link to the target user on the Windows 11 endpoint, resulting in initial execution.
+
+Execution
+
+T1059 (Command and Scripting Interpreter)
+
+Executed a reverse shell payload using PowerShell to establish C2 communication.
+
+Lateral Movement
+
+T1021 (Remote Services)
+
+Used tools like PsExec or compromised credentials to move from the initial workstation to the Domain Controller (PROJECTX-AD).
+
+Privilege Escalation
+
+T1068 (Exploitation for Privilege Escalation)
+
+Elevated user privileges on the DC to a Domain Administrator level.
+
+Exfiltration
+
+T1041 (Exfiltration Over C2 Channel)
+
+Stole simulated "sensitive data" files from a corporate share, proving the breach objective was met.
+
+Persistence
+
+T1547 (Boot or Logon Autostart Execution)
+
+Established a mechanism to maintain access in case of a system reboot or session termination.
+
+🔎 Incident Response and Detection (Blue Team)
+The primary goal of the Blue Team component was to ensure the security stack could detect every phase of the Red Team simulation.
+
+Wazuh Alert Triage: Monitored the Wazuh dashboard for high-severity alerts related to unauthorized process execution (PowerShell), new user creation, and suspicious remote logins.
+
+Custom Rule Writing: Developed a custom rule to specifically detect the unique characteristics of the malicious payload used during the initial access phase, lowering the time-to-detection.
+
+Log Investigation: Used Security Onion (Elastic Stack, Wireshark, Suricata) to analyze network traffic and system logs (Sysmon) from the endpoints to confirm the source, method, and scope of the compromise.
+
+Remediation: Documented the steps required to quarantine the infected hosts, revoke compromised credentials, and deploy GPOs to prevent the attack vector from being used again.
+
+📂 Repository Contents
+Documentation/ - Detailed write-ups on the attack methodology, incident response report, and network architecture guide.
+
+Configuration-Scripts/ - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
+
+Attack-Artifacts/ - The non-malicious code/payloads (e.g., Python scripts, HTML templates) used for the simulation. (Disclaimer: For educational use only.)
+
+Evidence-Screenshots/ - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
+
+🚀 Future Enhancements (NA101 Integration)
+This project serves as the foundation for future work. The immediate next steps include building off this topology for the Networks & Attacks 101 (NA101) course:
+
+Integrating a dedicated firewall solution (e.g., pfSense) to implement network segmentation rules.
+
+Deploying an Intrusion Prevention System (IPS) like Suricata to actively block network attacks.
+
+Practicing advanced network-layer attacks (MiTM, DNS Spoofing).
