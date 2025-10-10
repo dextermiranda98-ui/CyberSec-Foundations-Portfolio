@@ -22,9 +22,9 @@ The core defensive tools were deployed on their dedicated server VMs to ensure c
 
 | Tool / Component | VM Host | Configuration Detail | Goal |
 | ----- | ----- | ----- | ----- |
-| **Wazuh Manager** | PROJECTX-SEC (192.168.10.20) | Installed Manager and Elasticsearch stack. Configured default FIM and rootkit detection modules. | Centralized log ingestion, correlation, and initial alert generation. |
+| **Wazuh Manager** | PROJECTX-SEC (10.0.0.10) | Installed Manager and Elasticsearch stack. Configured default FIM and rootkit detection modules. | Centralized log ingestion, correlation, and initial alert generation. |
 | **Wazuh Agents** | PROJECTX-AD, PROJECTX-W11, PROJECTX-LINUX | Agents deployed and successfully connected to the Manager. | Endpoint detection and response (EDR) capability, including real-time log forwarding. |
-| **Security Onion** | PROJECTX-NETMON (192.168.10.30) | Configured the network interface to monitor all traffic on the Corporate LAN segment. | Network Intrusion Detection System (NIDS) using Suricata and deep packet inspection. |
+| **Security Onion** | PROJECTX-NETMON (10.0.0.103) | Configured the network interface to monitor all traffic on the Corporate LAN segment. | Network Intrusion Detection System (NIDS) using Suricata and deep packet inspection. |
 | **Email Sandbox** | PROJECTX-AD (via MailHog container) | Configured an internal, non-internet-facing SMTP server (MailHog) for safe phishing simulation. | Provides a safe environment to test email-based attacks without compromising external systems. |
 
 4. Linux Hardening (PROJECTX-LINUX, PROJECTX-SEC, PROJECTX-NETMON)
