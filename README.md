@@ -69,7 +69,7 @@ Remediation: Documented the steps required to quarantine the infected hosts, rev
 
 📂 Repository Contents
 
-Documentation/ - Detailed write-ups on the attack methodology, incident response report, and network architecture guide.
+* [Documentation/](Documentation/) - This folder contains detailed write-ups and reports, including the **[Cyber Attack Simulation Report](Documentation/Attack_Simulation_Report.md)**, which details the full Red and Blue Team analysis.
 
 Configuration-Scripts/ - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
 
