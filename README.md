@@ -1,4 +1,5 @@
 🛡️ Project Overview
+
 This repository documents the Enterprise 101 (E101) core section from ProjectSecurity.io, where I designed, built, attacked, and defended a small, virtualized enterprise network known as "ProjectX."
 
 The primary goal of this project was to gain hands-on, end-to-end experience in both offensive (Red Team) and defensive (Blue Team) security within a realistic Active Directory environment.
@@ -14,6 +15,7 @@ Executed a multi-stage cyber attack, from initial access to data exfiltration.
 Developed custom detection rules and performed incident response to identify and contain the simulated threat.
 
 🏛️ Lab Topology and Technologies
+
 The ProjectX network was segmented and managed using VirtualBox (or VMware) to simulate a modern corporate infrastructure.
 
 Network Components
@@ -29,6 +31,7 @@ Network Components
 | Corporate Services | Email/Web Sandbox | **MailHog** | Simulates an internal email server for intercepting phishing attempts. | 
 
 Core Skills Demonstrated
+
 System Administration: Active Directory setup, Group Policy Object (GPO) configuration, DNS management.
 
 Virtualization: Configuration of NAT and Internal/Host-Only networks for isolation and segmentation.
