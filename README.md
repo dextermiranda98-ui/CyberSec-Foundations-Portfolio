@@ -146,4 +146,22 @@ Custom Rule Writing: Developed a custom rule to specifically detect the unique c
 
 Log Investigation: Used Security Onion (Elastic Stack, Wireshark, Suricata) to analyze network traffic and system logs (Sysmon) from the endpoints to confirm the source, method, and scope of the compromise.
 
-Remediation: Document\
+Remediation: Documented the steps required to quarantine the infected hosts, revoke compromised credentials, and deploy GPOs to prevent the attack vector from being used again.
+
+📂 Repository Contents
+Documentation/ - Detailed write-ups on the attack methodology, incident response report, and network architecture guide.
+
+Configuration-Scripts/ - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
+
+Attack-Artifacts/ - The non-malicious code/payloads (e.g., Python scripts, HTML templates) used for the simulation. (Disclaimer: For educational use only.)
+
+Evidence-Screenshots/ - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
+
+🚀 Future Enhancements (NA101 Integration)
+This project serves as the foundation for future work. The immediate next steps include building off this topology for the Networks & Attacks 101 (NA101) course:
+
+Integrating a dedicated firewall solution (e.g., pfSense) to implement network segmentation rules.
+
+Deploying an Intrusion Prevention System (IPS) like Suricata to actively block network attacks.
+
+Practicing advanced network-layer attacks (MiTM, DNS Spoofing).
