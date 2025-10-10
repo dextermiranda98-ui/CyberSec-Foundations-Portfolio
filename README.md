@@ -73,9 +73,9 @@ Remediation: Documented the steps required to quarantine the infected hosts, rev
 
 * [Configuration-Scripts/](Configuration-Scripts/) - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
 
-Attack-Artifacts/ - The non-malicious code/payloads (e.g., Python scripts, HTML templates) used for the simulation. (Disclaimer: For educational use only.)
+* [Attack-Artifacts/](Attack-Artifacts/) - The non-malicious code/payloads (e.g., Python scripts, HTML templates) used for the simulation. (Disclaimer: For educational use only.)
 
-Evidence-Screenshots/ - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
+* [Evidence-Screenshots/](Attack-Artifacts/) - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
 
 🚀 Future Enhancements (NA101 Integration)
 
