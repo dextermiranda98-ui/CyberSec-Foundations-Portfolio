@@ -17,7 +17,6 @@ Developed custom detection rules and performed incident response to identify and
 The ProjectX network was segmented and managed using VirtualBox (or VMware) to simulate a modern corporate infrastructure.
 
 Network Components
-Copy the Markdown syntax below directly into your GitHub README:
 
 | **Virtual Machine (VM)** | **Role** | **Operating System/Tool** | **Purpose** | 
 | ----- | ----- | ----- | ----- | 
@@ -42,8 +41,6 @@ Offensive Security: Phishing, payload delivery, privilege escalation, and latera
 
 💥 Cyber Attack Simulation (Red Team)
 A full, end-to-end attack was conducted against the ProjectX environment, leveraging misconfigurations and vulnerable user interaction to compromise the domain. The phases mapped directly to the MITRE ATT&CK framework:
-
-Copy the Markdown syntax below directly into your GitHub README:
 
 | **ATT&CK Phase** | **Technique (T-Code)** | **Summary of Action** | 
 | ----- | ----- | ----- | 
