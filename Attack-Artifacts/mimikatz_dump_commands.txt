@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------
+ATTACK ARTIFACT: Credential Dumping Commands Log
+PHASE: Credential Access (T1003)
+-------------------------------------------------------------------------
+This file documents the Mimikatz commands used during the simulation to harvest
+credentials from the target machine's memory (Local Security Authority Subsystem Service - LSASS).
+This action is a key step before performing Lateral Movement.
+--- 1. Privilege Escalation ---
+Mimikatz requires Debug privilege to access the LSASS process memory.
+privilege::debug
+
+Output: Privilege '20' OK
+--- 2. LSASS Dump and Credential Extraction ---
+This command injects into LSASS to dump secrets, specifically targeting NTLM/SHA1 hashes
+and, if available, clear-text passwords (WDigest, LiveSSP, etc.).
+sekurlsa::logonpasswords
+
+This command is often used to quickly extract all available credentials (hashes, tickets, etc.)
+from active logon sessions.
+--- 3. Optional: Exporting Kerberos Tickets ---
+If Kerberos was the primary authentication mechanism, tickets would be exported for use
+in Pass-the-Ticket attacks.
+kerberos::list
+kerberos::golden /user:administrator /domain:projectx.internal /sid:S-1-5-21-XXX-XXX-XXX /krbtgt:HASH /ptt
+
+NOTE: The above 'golden ticket' command is a concept placeholder; the actual values
+(SID and HASH) were extracted in the previous step.
+-------------------------------------------------------------------------
+DEFENSE CONTEXT:
+Successful execution of these commands generates high-fidelity telemetry, which the
+Blue Team's Sysmon and Wazuh rules were specifically tuned to detect (e.g., process
+injection into lsass.exe and specific command-line strings).
