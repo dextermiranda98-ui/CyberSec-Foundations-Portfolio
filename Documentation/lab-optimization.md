@@ -1,0 +1,1 @@
+Because this lab was built on a mobile workstation (Dell XPS 13), I implemented a strict resource management plan: allocating only 2GB RAM to endpoints and 4GB to the SIEM, utilizing nested virtualization to maintain a 10-VM environment without host system instability.
