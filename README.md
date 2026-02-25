@@ -1,71 +1,42 @@
-🛡️ Project Overview
+🛡️ Enterprise Cyber Range: Offense & Defense Lab
 
-This repository documents the Enterprise 101 (E101) core section from ProjectSecurity.io, where I designed, built, attacked, and defended a small, virtualized enterprise network known as "ProjectX."
+Project Overview
 
-The primary goal of this project was to gain hands-on, end-to-end experience in both offensive (Red Team) and defensive (Blue Team) security within a realistic Active Directory environment.
+This project is a full-scale simulation of a corporate enterprise environment. It was designed to practice the CIA Triad (Confidentiality, Integrity, and Availability) by deploying a vulnerable network and defending it using industry-standard SIEM and XDR tools.
 
-Key Outcomes:
+💻 The Hardware Environment
 
-Successfully deployed and managed a multi-OS virtual network using a defined enterprise topology.
+Device: Dell XPS 13
 
-Implemented a Security Information and Event Management (SIEM) solution for continuous monitoring.
+Optimization: Leveraged hardware virtualization (VT-x) and aggressive resource capping to maintain a stable 8-10 VM environment on a mobile workstation.
 
-Executed a multi-stage cyber attack, from initial access to data exfiltration.
+Hypervisor: Oracle VirtualBox
 
-Developed custom detection rules and performed incident response to identify and contain the simulated threat.
+Note: Managed strict RAM and CPU thread allocation to ensure high-fidelity telemetry collection from the SIEM without system bottlenecks.
 
-🏛️ Lab Topology and Technologies
+🛠️ The Tech Stack
 
-The ProjectX network was segmented and managed using VirtualBox (or VMware) to simulate a modern corporate infrastructure.
+Identity: Windows Server 2022 (Active Directory, DNS, GPO)
 
-Network Components
+Defensive: Wazuh (SIEM/XDR), Security Onion, Sysmon
 
-| **Virtual Machine (VM)** | **Role** | **Operating System/Tool** | **Purpose** | 
-| ----- | ----- | ----- | ----- | 
-| PROJECTX-AD | Domain Controller (DC) | Windows Server 2025 | Centralized identity management (Active Directory) and DNS resolution. | 
-| PROJECTX-W11 | Windows Workstation | Windows 11 Enterprise | Simulates a primary user endpoint. Used for phishing and vulnerability exploitation. | 
-| PROJECTX-LINUX | Corporate Workstation | Ubuntu Desktop 22.04 | Simulates a secondary user endpoint. | 
-| PROJECTX-SEC | Security Server (SIEM) | Ubuntu Server 22.04 + **Wazuh** | Security Information and Event Management, collecting logs from all endpoints via agents. | 
-| PROJECTX-NETMON | Network Monitoring | **Security Onion** | Intrusion Detection System (IDS) and network log analysis. | 
-| ATTACKER-VM | Offensive Machine | **Kali Linux** | Used to execute the simulated cyber attack chain. | 
-| Corporate Services | Email/Web Sandbox | **MailHog** | Simulates an internal email server for intercepting phishing attempts. | 
+Offensive: Kali Linux, Metasploit, PowerShell Empire
 
-Core Skills Demonstrated
+Endpoints: Windows 10/11 (Target machines), Ubuntu Mail Server (MailHog)
 
-System Administration: Active Directory setup, Group Policy Object (GPO) configuration, DNS management.
+🚀 Key Security Milestones
 
-Virtualization: Configuration of NAT and Internal/Host-Only networks for isolation and segmentation.
+Infrastructure Hardening: Deployed Active Directory and configured Group Policy Objects (GPOs) to enforce security baselines.
 
-Log Management: Deployment and configuration of Wazuh agents and centralized log ingestion.
+Telemetry & Monitoring: Installed Wazuh agents on all endpoints. Configured custom rules to detect LSASS dumping and Unauthorized RDP attempts.
 
-Incident Detection: Writing custom detection rules for specific attack techniques.
+Attack Simulation: * Performed Brute Force attacks on the Mail Server.
 
-Offensive Security: Phishing, payload delivery, privilege escalation, and lateral movement.
+Executed Mimikatz to test credential harvesting detection.
 
-💥 Cyber Attack Simulation (Red Team)
+Successfully alerted on and mitigated a Golden Ticket attack within the AD environment.
 
-A full, end-to-end attack was conducted against the ProjectX environment, leveraging misconfigurations and vulnerable user interaction to compromise the domain. The phases mapped directly to the MITRE ATT&CK framework:
-
-| **ATT&CK Phase** | **Technique (T-Code)** | **Summary of Action** | 
-| ----- | ----- | ----- | 
-| Initial Access | T1566 (Phishing) | Delivered a malicious file or link to the target user on the Windows 11 endpoint, resulting in initial execution. | 
-| Execution | T1059 (Command and Scripting Interpreter) | Executed a reverse shell payload using PowerShell to establish C2 communication. | 
-| Lateral Movement | T1021 (Remote Services) | Used tools like **PsExec** or compromised credentials to move from the initial workstation to the Domain Controller (PROJECTX-AD). | 
-| Privilege Escalation | T1068 (Exploitation for Privilege Escalation) | Elevated user privileges on the DC to a Domain Administrator level. | 
-| Exfiltration | T1041 (Exfiltration Over C2 Channel) | Stole simulated "sensitive data" files from a corporate share, proving the breach objective was met. | 
-| Persistence | T1547 (Boot or Logon Autostart Execution) | Established a mechanism to maintain access in case of a system reboot or session termination. | 
-
-🔎 Incident Response and Detection (Blue Team)
-
-The primary goal of the Blue Team component was to ensure the security stack could detect every phase of the Red Team simulation.
-
-Wazuh Alert Triage: Monitored the Wazuh dashboard for high-severity alerts related to unauthorized process execution (PowerShell), new user creation, and suspicious remote logins.
-
-Custom Rule Writing: Developed a custom rule to specifically detect the unique characteristics of the malicious payload used during the initial access phase, lowering the time-to-detection.
-
-Log Investigation: Used Security Onion (Elastic Stack, Wireshark, Suricata) to analyze network traffic and system logs (Sysmon) from the endpoints to confirm the source, method, and scope of the compromise.
-
-Remediation: Documented the steps required to quarantine the infected hosts, revoke compromised credentials, and deploy GPOs to prevent the attack vector from being used again.
+Incident Response: Documented "False Positives" vs "True Positives" to refine the SIEM alert-to-noise ratio.
 
 📂 Repository Contents
 
