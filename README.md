@@ -10,7 +10,7 @@ Device: Dell XPS 13
 
 Optimization: Leveraged hardware virtualization (VT-x) and aggressive resource capping to maintain a stable 8-10 VM environment on a mobile workstation.
 
-Hypervisor: Oracle VirtualBox
+Hypervisor: VMware
 
 Note: Managed strict RAM and CPU thread allocation to ensure high-fidelity telemetry collection from the SIEM without system bottlenecks.
 
