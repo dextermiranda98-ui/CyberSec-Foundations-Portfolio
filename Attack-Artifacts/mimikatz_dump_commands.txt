@@ -1,8 +1,13 @@
 -------------------------------------------------------------------------
+
 ATTACK ARTIFACT: Credential Dumping Commands Log
+
 PHASE: Credential Access (T1003)
+
 -------------------------------------------------------------------------
+
 This file documents the Mimikatz commands used during the simulation to harvest
+
 credentials from the target machine's memory (Local Security Authority Subsystem Service - LSASS).
 This action is a key step before performing Lateral Movement.
 --- 1. Privilege Escalation ---
