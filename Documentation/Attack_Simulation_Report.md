@@ -7,7 +7,7 @@ A simulated Red Team engagement was conducted against the ProjectX virtual enter
 
 Target Environment: ProjectX Virtual Network (Simulated Enterprise)
 
-Hypervisor: VirtualBox
+Hypervisor: VMware
 
 Key Systems: Windows Server 2025 (Domain Controller), Windows 11 Workstation, Ubuntu Workstation, Kali Linux (Attacker), Ubuntu Server (Wazuh SIEM), Security Onion (Network Monitoring).
 
