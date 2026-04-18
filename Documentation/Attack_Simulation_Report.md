@@ -9,7 +9,7 @@ Target Environment: ProjectX Virtual Network (Simulated Enterprise)
 
 Hypervisor: VMware
 
-Key Systems: Windows Server 2025 (Domain Controller), Windows 11 Workstation, Ubuntu Workstation, Kali Linux (Attacker), Ubuntu Server (Wazuh SIEM), Security Onion (Network Monitoring).
+Key Systems: Windows Server 2022 (Domain Controller), Windows 11 Workstation, Ubuntu Workstation, Kali Linux (Attacker), Ubuntu Server (Wazuh SIEM), Security Onion (Network Monitoring).
 
 Scope: The engagement covered the full cyber kill chain, from initial reconnaissance to achieving persistence on the Domain Controller.
 
