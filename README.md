@@ -24,7 +24,7 @@ Offensive: Kali Linux, Metasploit, PowerShell Empire
 
 Endpoints: Windows 10/11 (Target machines), Ubuntu Mail Server (MailHog)
 
-🚀 Key Security Milestones
+🚀 Infrastructure & Support Milestones
 
 Infrastructure Hardening: Deployed Active Directory and configured Group Policy Objects (GPOs) to enforce security baselines.
 
