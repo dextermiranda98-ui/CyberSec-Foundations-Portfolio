@@ -5,11 +5,11 @@ ProjectX Enterprise Network Topology and Configuration
 This document provides the blueprint for the virtual network infrastructure used in the ProjectX E101 lab. The topology is designed to emulate a standard small business environment, featuring segregated segments for corporate user access and administrative/security functions.
 
 2. Network Diagram (Conceptual)
-(Note: Replace the line above with your actual network diagram image, e.g., created with tools like draw.io or Visio.)
+
 
 3. Network Segmentation
 
-The lab utilizes a single internal network configured as a VirtualBox NAT Network. This isolates the ProjectX environment from the host machine's physical network while allowing all internal VMs outbound internet access (essential for updates and tool downloads).
+The lab utilizes a single internal network configured as a VMware NAT Network. This isolates the ProjectX environment from the host machine's physical network while allowing all internal VMs outbound internet access.
 
 | Network Segment | Subnet (Example) | VM Roles Included | Purpose | 
 | ----- | ----- | ----- | ----- | 
