@@ -32,11 +32,16 @@ Telemetry & Monitoring: Installed Wazuh agents on all endpoints. Configured cust
 
 Attack Simulation: * Performed Brute Force attacks on the Mail Server.
 
-Executed Mimikatz to test credential harvesting detection.
 
 Successfully alerted on and mitigated a Golden Ticket attack within the AD environment.
 
 Incident Response: Documented "False Positives" vs "True Positives" to refine the SIEM alert-to-noise ratio.
+
+Simulated the full onboarding/offboarding process within Active Directory for a mock "ProjectX" workforce.
+
+Configured DNS and DHCP to ensure stable network lease assignments for all Windows 10/11 endpoints.
+
+Used the lab to replicate common Windows 10 "Blue Screen" errors and connectivity drops to practice rapid troubleshooting.
 
 📂 Repository Contents
 
