@@ -48,13 +48,12 @@ Network Layer Attacks: Executed automated Brute Force attacks against the Ubuntu
 
 📂 Repository Architecture
 
-* [Documentation/](Documentation/) - # Cyber Attack Simulation Reports (Red & Blue Team analysis)
+* [Documentation/](Documentation/)   # Cyber Attack Simulation Reports (Red & Blue Team analysis)
 
-* [Configuration-Scripts/](Configuration-Scripts/) - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
+* [Configuration-Scripts/](Configuration-Scripts/)   # Custom Wazuh rules, AD Group Policy scripts, hardening baselines
 
-* [Attack-Artifacts/](Attack-Artifacts/) - The non-malicious code/payloads (e.g., Python scripts, HTML templates) used for the simulation. (Disclaimer: For educational use only.)
-
-* [Evidence-Screenshots/](Attack-Artifacts/) - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
+* [Attack-Artifacts/](Attack-Artifacts/)  # Educational python scripts and HTML templates used for simulation
+* [Evidence-Screenshots/](Attack-Artifacts/)  # Visual validation (Wazuh Alerts Dashboard, Domain Controller exploitation)
 
 🔮 Future Enhancements (NA101 Integration)
 
