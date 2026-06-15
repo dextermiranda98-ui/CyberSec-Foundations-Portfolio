@@ -48,7 +48,7 @@ Network Layer Attacks: Executed automated Brute Force attacks against the Ubuntu
 
 📂 Repository Architecture
 
-* [Documentation/](Documentation/) - This folder contains detailed write-ups and reports, including the **[Cyber Attack Simulation Report](Documentation/Attack_Simulation_Report.md)**, which details the full Red and Blue Team analysis.
+* [Documentation/](Documentation/) - # Cyber Attack Simulation Reports (Red & Blue Team analysis)
 
 * [Configuration-Scripts/](Configuration-Scripts/) - All custom configuration files, including Wazuh rule definitions, Active Directory Group Policy scripts, and hardening baselines.
 
