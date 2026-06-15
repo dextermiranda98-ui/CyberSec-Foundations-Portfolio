@@ -56,12 +56,12 @@ Network Layer Attacks: Executed automated Brute Force attacks against the Ubuntu
 
 * [Evidence-Screenshots/](Attack-Artifacts/) - Visual proof of key deployment and attack steps (e.g., Wazuh Alerts Dashboard, successful whoami commands on the Domain Controller).
 
-🚀 Future Enhancements (NA101 Integration)
+🔮 Future Enhancements (NA101 Integration)
 
-This project serves as the foundation for future work. The immediate next steps include building off this topology for the Networks & Attacks 101 (NA101) course:
+This architecture serves as the baseline topology for my upcoming Networks & Attacks 101 (NA101) integration:
 
-Integrating a dedicated firewall solution (e.g., pfSense) to implement network segmentation rules.
+Network Segmentation: Integrating a dedicated pfSense firewall appliance to isolate the domain controller from public-facing assets.
 
-Deploying an Intrusion Prevention System (IPS) like Suricata to actively block network attacks.
+Intrusion Prevention: Deploying Suricata (IPS/IDS) to actively drop malicious network-layer traffic.
 
-Practicing advanced network-layer attacks (MiTM, DNS Spoofing).
+Advanced Routing Attacks: Simulating Man-in-the-Middle (MiTM) and DNS Spoofing attacks within the internal virtual network switch.
