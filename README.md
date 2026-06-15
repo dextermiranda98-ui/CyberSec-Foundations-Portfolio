@@ -6,42 +6,45 @@ This project is a full-scale simulation of a corporate enterprise environment de
 
 💻 The Hardware Environment
 
-Device: Dell XPS 13
+Host Device: Dell XPS 13
 
-Optimization: Leveraged hardware virtualization (VT-x) and aggressive resource capping to maintain a stable 8-10 VM environment on a mobile workstation.
+Optimization: Optimized hardware virtualization (VT-x) and engineered aggressive resource/vCPU capping to maintain a stable, high-fidelity 8–10 Virtual Machine topology on a single mobile workstation without telemetry loss or bottlenecking.
 
-Hypervisor: VMware
-
-Note: Managed strict RAM and CPU thread allocation to ensure high-fidelity telemetry collection from the SIEM without system bottlenecks.
+Hypervisor Platform: VMware Workstation
 
 🛠️ The Tech Stack
 
-Identity: Windows Server 2022 (Active Directory, DNS, GPO)
+Identity & Access Management (IAM): Windows Server 2022 (Active Directory, DNS, GPO)
 
-Defensive: Wazuh (SIEM/XDR), Security Onion, Sysmon
+Defensive Architecture (SIEM/XDR): Wazuh (SIEM/XDR), Security Onion, System Monitor (Sysmon)
 
-Offensive: Kali Linux, Metasploit, PowerShell Empire
+Offensive Frameworks: Kali Linux, Metasploit Framework, PowerShell Empire
 
-Endpoints: Windows 10/11 (Target machines), Ubuntu Mail Server (MailHog)
+Target Endpoints & Infrastructure: Windows 10/11 Enterprise, Ubuntu Mail Server (MailHog)
 
 🚀 Infrastructure & Support Milestones
 
-Infrastructure Hardening: Deployed Active Directory and configured Group Policy Objects (GPOs) to enforce security baselines.
+🏗️ 1. Enterprise IT Administration & Support
 
-Telemetry & Monitoring: Installed Wazuh agents on all endpoints. Configured custom rules to detect LSASS dumping and Unauthorized RDP attempts.
+Network Infrastructure: Configured core DNS zones and DHCP scopes to ensure stable network lease assignments across all Windows 10/11 endpoints.
 
-Attack Simulation: * Performed Brute Force attacks on the Mail Server.
+Identity Management Lifecycle: Simulated full onboarding, role changes, and offboarding workflows within Active Directory for a mock "ProjectX" workforce.
 
+Desktop Support Engineering: Replicated common Windows 10 "Blue Screen of Death" (BSOD) errors and connectivity drops to develop rapid troubleshooting and root-cause analysis playbooks.
 
-Successfully alerted on and mitigated a Golden Ticket attack within the AD environment.
+🔒 2. Infrastructure Hardening & Defensive Engineering
 
-Incident Response: Documented "False Positives" vs "True Positives" to refine the SIEM alert-to-noise ratio.
+Identity Hardening: Deployed Windows Server 2022 Active Directory and established custom Group Policy Objects (GPOs) to enforce strict enterprise security baselines.
 
-Simulated the full onboarding/offboarding process within Active Directory for a mock "ProjectX" workforce.
+Telemetry & Monitoring Egress: Deployed Wazuh agents across all windows and Linux endpoints. Engineered custom detection rules targeting advanced post-exploitation techniques, including LSASS memory dumping and unauthorized RDP connection attempts.
 
-Configured DNS and DHCP to ensure stable network lease assignments for all Windows 10/11 endpoints.
+SIEM Tuning & Tuning: Analyzed and documented "False Positives" vs. "True Positives" to actively suppress benign alert noise and optimize analyst triage efficiency.
 
-Used the lab to replicate common Windows 10 "Blue Screen" errors and connectivity drops to practice rapid troubleshooting.
+⚔️ 3. Threat Simulation & Incident Response
+
+Credential Theft Mitigated: Alerted on, triaged, and successfully mitigated a high-severity Golden Ticket (Kerberos) attack within the Active Directory domain controller.
+
+Network Layer Attacks: Executed automated Brute Force attacks against the Ubuntu Mail Server to validate log ingestion and security control alerts.
 
 📂 Repository Contents
 
