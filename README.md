@@ -2,7 +2,7 @@
 
 Project Overview
 
-This project is a full-scale simulation of a corporate enterprise environment. It was designed to practice the CIA Triad (Confidentiality, Integrity, and Availability) by deploying a vulnerable network and defending it using industry-standard SIEM and XDR tools.
+This project is a full-scale simulation of a corporate enterprise environment designed to operationalize the CIA Triad (Confidentiality, Integrity, and Availability). The lab consists of deploying a multi-tier vulnerable corporate network, executing sophisticated attack vectors, and engineering detection/defense mechanisms using industry-standard SIEM and XDR ecosystems.
 
 💻 The Hardware Environment
 
