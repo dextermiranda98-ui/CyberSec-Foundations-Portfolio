@@ -1,10 +1,10 @@
 🛡️ Enterprise Cyber Range: Offense & Defense Lab
 
-Project Overview
+📌 Project Overview
 
 This project is a full-scale simulation of a corporate enterprise environment designed to operationalize the CIA Triad (Confidentiality, Integrity, and Availability). The lab consists of deploying a multi-tier vulnerable corporate network, executing sophisticated attack vectors, and engineering detection/defense mechanisms using industry-standard SIEM and XDR ecosystems.
 
-💻 The Hardware Environment
+💻 Hardware & Virtualization Architecture
 
 Host Device: Dell XPS 13
 
@@ -12,7 +12,7 @@ Optimization: Optimized hardware virtualization (VT-x) and engineered aggressive
 
 Hypervisor Platform: VMware Workstation
 
-🛠️ The Tech Stack
+🛠️ The Enterprise Tech Stack
 
 Identity & Access Management (IAM): Windows Server 2022 (Active Directory, DNS, GPO)
 
@@ -22,7 +22,7 @@ Offensive Frameworks: Kali Linux, Metasploit Framework, PowerShell Empire
 
 Target Endpoints & Infrastructure: Windows 10/11 Enterprise, Ubuntu Mail Server (MailHog)
 
-🚀 Infrastructure & Support Milestones
+🚀 Infrastructure, Support & Security Milestones
 
 🏗️ 1. Enterprise IT Administration & Support
 
@@ -46,7 +46,7 @@ Credential Theft Mitigated: Alerted on, triaged, and successfully mitigated a hi
 
 Network Layer Attacks: Executed automated Brute Force attacks against the Ubuntu Mail Server to validate log ingestion and security control alerts.
 
-📂 Repository Contents
+📂 Repository Architecture
 
 * [Documentation/](Documentation/) - This folder contains detailed write-ups and reports, including the **[Cyber Attack Simulation Report](Documentation/Attack_Simulation_Report.md)**, which details the full Red and Blue Team analysis.
 
