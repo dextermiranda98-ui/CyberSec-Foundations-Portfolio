@@ -1,0 +1,20 @@
+ <group name="windows, sysmon, process_creation">
+
+  <rule id="100005" level="12">
+    <if_sid>61603</if_sid>
+    <field name="win.eventdata.targetImage">C:\\Windows\\System32\\lsass.exe</field>
+    <field name="win.eventdata.grantedAccess">0x1010</field>
+    <description>CRITICAL: Potential LSASS Memory Dump Detected (Credential Dumping via Mimikatz/Procdump)</description>
+    <mitre>
+      <id>T1003.001</id>
+    </mitre>
+  </rule>
+
+  <rule id="100006" level="9">
+    <if_sid>61603</if_sid>
+    <field name="win.eventdata.image">powershell.exe</field>
+    <field name="win.eventdata.commandLine">-nop -w hidden -encodedcommand</field>
+    <description>WARNING: Obfuscated PowerShell Execution Detected (Potential Reverse Shell/Command & Control C2)</description>
+  </rule>
+
+</group>
