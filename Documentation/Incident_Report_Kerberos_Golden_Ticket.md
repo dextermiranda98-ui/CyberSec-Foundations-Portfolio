@@ -14,6 +14,6 @@ An alert was triggered indicating a suspicious Kerberos Ticket Granting Ticket (
 * **Target Host:** CORP-DC-01 (10.0.0.10)
 
 ## 3. Containment & Eradication Steps
-1. **Isolated Target Host:** The compromised host was network-isolated using internal VirtualBox host-only adapter controls to halt data exfiltration.
+1. **Isolated Target Host:** The compromised host was network-isolated using internal VMware host-only adapter controls to halt data exfiltration.
 2. **Reset KRBTGT Password:** Executed the built-in Microsoft script to reset the `krbtgt` account password twice, rendering all forged tickets invalid.
 3. **Log Cleansing & Analysis:** Validated using Sysmon logs that malicious lateral persistence hooks were purged.
