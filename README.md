@@ -1,66 +1,46 @@
-🛡️ Enterprise Cyber Range: Offense & Defense Lab
+# 🖥️ Enterprise Infrastructure, Support Operations & Threat Simulation Lab
 
-📌 Project Overview
+Welcome to my Enterprise Support & Systems Security portfolio. This repository hosts the documentation, configurations, standard operating procedures (SOPs), and simulation reports developed within my simulated corporate environment: **`corp.project-x-dc.com`**.
 
-This project is a full-scale simulation of a corporate enterprise environment designed to operationalize the CIA Triad (Confidentiality, Integrity, and Availability). The lab consists of deploying a multi-tier vulnerable corporate network, executing sophisticated attack vectors, and engineering detection/defense mechanisms using industry-standard SIEM and XDR ecosystems.
+This lab was engineered using **VMware Workstation** to mirror a real-world enterprise network, focusing on system administration, user lifecycle management, desktop support, endpoint telemetry, and active threat detection.
 
-💻 Hardware & Virtualization Architecture
+---
 
-Host Device: Dell XPS 13
+## 🗺️ Lab Topology & Environment Specs
+*   **Domain Controller:** Windows Server 2022 (`corp.project-x-dc.com` | IP: `10.0.0.5`)
+*   **Services Hosted:** Active Directory Domain Services (AD DS), DNS, DHCP, Group Policy (GPMC)
+*   **Endpoints:** Windows 10/11 Enterprise & Ubuntu Linux Client Workstations
+*   **Ticketing & Queue System:** osTicket (Simulated Help Desk Portal)
+*   **Telemetry & SIEM:** Wazuh Manager & Endpoint Security Agents
+*   **Attack Platform:** Kali Linux (External threat simulation host)
 
-Optimization: Optimized hardware virtualization (VT-x) and engineered aggressive resource/vCPU capping to maintain a stable, high-fidelity 8–10 Virtual Machine topology on a single mobile workstation without telemetry loss or bottlenecking.
+---
 
-Hypervisor Platform: VMware Workstation
+## 📁 Repository Navigation & Documentation
+I have structured this repository to reflect standard corporate IT and security operations. Click the links below to view the detailed work, scripts, and simulation reports:
 
-🛠️ The Enterprise Tech Stack
+### 👤 [1. Active Directory & Identity Management (IAM)](./1_Active_Directory_IAM/User-Provisioning-SOP.md)
+*   **What's Inside:** Active Directory OU architecture, role-based access control (RBAC), and standard operating procedures (SOPs) for secure user onboarding/offboarding.
+*   **GPOs Implemented:** Account lockout policies, password complexity requirements, and software restriction policies to block malicious execution.
+*   **Configurations:** View our custom [GPO Hardening Scripts & Baselines](./Configuration-Scripts/).
 
-Identity & Access Management (IAM): Windows Server 2022 (Active Directory, DNS, GPO)
+### 🛠️ [2. Desktop Support & Troubleshooting Playbook](./2_Endpoint_Troubleshooting/Desktop-Support-Playbook.md)
+*   **What's Inside:** Step-by-step technical resolution steps for common enterprise support scenarios.
+*   **Scenarios Covered:** Diagnosing and recovering from Windows BSODs, resolving local network/DNS drops (APIPA recovery), and managing support tickets using an **osTicket** SLA structure.
 
-Defensive Architecture (SIEM/XDR): Wazuh (SIEM/XDR), Security Onion, System Monitor (Sysmon)
+### 🛡️ [3. Endpoint Security & Telemetry (Wazuh SIEM)](./3_Security_Telemetry/Endpoint-Monitoring-Wazuh.md)
+*   **What's Inside:** Deployment and configuration of Wazuh SIEM monitoring agents across the domain controller and endpoints.
+*   **Configurations:** Check out the [Custom Wazuh Rules & Configurations](./Configuration-Scripts/) utilized to alert on credential attacks and privilege escalations.
 
-Offensive Frameworks: Kali Linux, Metasploit Framework, PowerShell Empire
+### 🎯 [4. Incident Response & Threat Simulation (Red vs. Blue)](./Documentation/)
+*   **What's Inside:** Comprehensive cyber attack simulation reports analyzing system exploits, credential access, and host defense mitigation.
+*   **Artifacts Used:** View the educational [Python Attack Scripts & Templates](./Attack-Artifacts/) used during the simulations.
+*   **Visual Proof:** Step-by-step verification and logs via our [Evidence Screenshots](./Evidence-Screenshots/) gallery (featuring Wazuh alerts and Domain Controller telemetry).
 
-Target Endpoints & Infrastructure: Windows 10/11 Enterprise, Ubuntu Mail Server (MailHog)
+---
 
-🚀 Infrastructure, Support & Security Milestones
-
-🏗️ 1. Enterprise IT Administration & Support
-
-Network Infrastructure: Configured core DNS zones and DHCP scopes to ensure stable network lease assignments across all Windows 10/11 endpoints.
-
-Identity Management Lifecycle: Simulated full onboarding, role changes, and offboarding workflows within Active Directory for a mock "ProjectX" workforce.
-
-Desktop Support Engineering: Replicated common Windows 10 "Blue Screen of Death" (BSOD) errors and connectivity drops to develop rapid troubleshooting and root-cause analysis playbooks.
-
-🔒 2. Infrastructure Hardening & Defensive Engineering
-
-Identity Hardening: Deployed Windows Server 2022 Active Directory and established custom Group Policy Objects (GPOs) to enforce strict enterprise security baselines.
-
-Telemetry & Monitoring Egress: Deployed Wazuh agents across all windows and Linux endpoints. Engineered custom detection rules targeting advanced post-exploitation techniques, including LSASS memory dumping and unauthorized RDP connection attempts.
-
-SIEM Tuning & Tuning: Analyzed and documented "False Positives" vs. "True Positives" to actively suppress benign alert noise and optimize analyst triage efficiency.
-
-⚔️ 3. Threat Simulation & Incident Response
-
-Credential Theft Mitigated: Alerted on, triaged, and successfully mitigated a high-severity Golden Ticket (Kerberos) attack within the Active Directory domain controller.
-
-Network Layer Attacks: Executed automated Brute Force attacks against the Ubuntu Mail Server to validate log ingestion and security control alerts.
-
-📂 Repository Architecture
-
-* [Documentation/](Documentation/)   # Cyber Attack Simulation Reports (Red & Blue Team analysis)
-
-* [Configuration-Scripts/](Configuration-Scripts/)   # Custom Wazuh rules, AD Group Policy scripts, hardening baselines
-
-* [Attack-Artifacts/](Attack-Artifacts/)  # Educational python scripts and HTML templates used for simulation
-* [Evidence-Screenshots/](Attack-Artifacts/)  # Visual validation (Wazuh Alerts Dashboard, Domain Controller exploitation)
-
-🔮 Future Enhancements (NA101 Integration)
-
-This architecture serves as the baseline topology for my upcoming Networks & Attacks 101 (NA101) integration:
-
-Network Segmentation: Integrating a dedicated pfSense firewall appliance to isolate the domain controller from public-facing assets.
-
-Intrusion Prevention: Deploying Suricata (IPS/IDS) to actively drop malicious network-layer traffic.
-
-Advanced Routing Attacks: Simulating Man-in-the-Middle (MiTM) and DNS Spoofing attacks within the internal virtual network switch.
+## ⚙️ Core Competencies Demonstrated
+*   **Systems Administration:** Windows Server 2022, Active Directory administration, Group Policy management, and virtualization (VMware).
+*   **Desktop Support:** Operating system troubleshooting (Windows/macOS/Linux), hardware diagnostic testing, and local network diagnostics (TCP/IP, DHCP, DNS).
+*   **Security & Telemetry:** SIEM deployment (Wazuh), endpoint monitoring, log analysis, and incident triage.
+*   **IT Operations:** Help Desk queue triage, SLA adherence, change management, and tech
